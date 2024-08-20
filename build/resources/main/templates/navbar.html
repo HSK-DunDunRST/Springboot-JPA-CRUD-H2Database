@@ -1,0 +1,25 @@
+<nav th:fragment="navbarFragment" class="navbar navbar-expand-lg navbar-light bg-light border-bottom"  style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <!-- 로고 또는 사이트명 -->
+        <a class="navbar-brand" href="/">로고</a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupoortedContent" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <!-- 로그인 하지 않았을 경우 네비게이션 바에 표시 -->
+                    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+                    <!-- 로그인 했거나 되어있는 경우 네비게이션 바에 표시 -->
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+                </li>
+                <li class="nav-item">
+                    <!-- 로그인이 되어 있지 않을 경우에만 표시 -->
+                    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
