@@ -81,7 +81,7 @@ cd yourproject
   - 비밀번호: 비어 있음
 
 
-### 6. 애플리케이션 설정
+## 애플리케이션 설정
 
 - 설정 파일은 `src/main/resources/application.properties`입니다.
   - **spring.application.name**: 애플리케이션 이름 지정
