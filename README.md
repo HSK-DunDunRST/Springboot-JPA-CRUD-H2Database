@@ -1,4 +1,4 @@
-# 스프링부트 + JPA + Thymeleaf를 사용한 웹서버 및 웹페이지
+## 스프링부트 + JPA + Thymeleaf를 사용한 웹서버 및 웹페이지
 
 > 간단한 설명: 이 프로젝트는 Spring Boot, H2 데이터베이스, JPA, 그리고 Thymeleaf를 이용해 개발된 간단한 웹 애플리케이션입니다.
 > 
