@@ -3,7 +3,7 @@
 > **Brief Description**: This project is a simple web application developed using Spring Boot, H2 Database, JPA, and Thymeleaf.
 > 
 > **Note**: This is a study-based project created with reference to the Jump to Spring book on WikiDocs.
-> [![WikiDocs](https://img.shields.io/badge/My_Website-Visit-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://wikidocs.net/book/7601)
+> [![Go WikiDocs](https://img.shields.io/badge/My_Website-Visit-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://wikidocs.net/book/7601)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
