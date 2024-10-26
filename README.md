@@ -1,9 +1,12 @@
+아래는 "GitHub Repository" 뱃지를 "WikiDocs" 뱃지로 변경한 예제입니다. 
+
+---
+
 ## Web Server and Web Page using Spring Boot + JPA + Thymeleaf
 
 > **Brief Description**: This project is a simple web application developed using Spring Boot, H2 Database, JPA, and Thymeleaf.
 > 
-> **Note**: This is a study-based project created with reference to the Jump to Spring book on WikiDocs.
-> [![Go WikiDocs](https://img.shields.io/badge/My_Website-Visit-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://wikidocs.net/book/7601)
+> **Note**: This is a study-based project created with reference to the Jump to Spring book on WikiDocs. [![WikiDocs](https://img.shields.io/badge/WikiDocs-Visit-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://wikidocs.net/book/7601)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
