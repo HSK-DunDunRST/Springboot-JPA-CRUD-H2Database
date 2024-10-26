@@ -1,103 +1,99 @@
-## 스프링부트 + JPA + Thymeleaf를 사용한 웹서버 및 웹페이지
+## Web Server and Web Page using Spring Boot + JPA + Thymeleaf
 
-> 간단한 설명: 이 프로젝트는 Spring Boot, H2 데이터베이스, JPA, 그리고 Thymeleaf를 이용해 개발된 간단한 웹 애플리케이션입니다.
+> **Brief Description**: This project is a simple web application developed using Spring Boot, H2 Database, JPA, and Thymeleaf.
 > 
-> 참고 사항: 이 프로젝트는 공부용으로 생성된 프로젝트이며, 위키독스 점프 투 스프링 교재를 참고하여 만든 프로젝트 입니다. [![WikiDocs](https://img.shields.io/badge/My_Website-Visit-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://wikidocs.net/book/7601)
+> **Note**: This is a study-based project created with reference to the Jump to Spring book on WikiDocs. [![WikiDocs](https://img.shields.io/badge/My_Website-Visit-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://wikidocs.net/book/7601)
 
-## 목차
-- [프로젝트 소개](#프로젝트-소개)
-- [기술 스택](#기술-스택)
-- [프로젝트 구조](#프로젝트-구조)
-- [설치 및 실행 방법](#설치-및-실행-방법)
-- [애플리케이션 설정](#애플리케이션-설정)  <!-- 링크 확인 -->
-- [주요 기능](#주요-기능)
-  
-## 프로젝트 소개
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Installation and Execution](#installation-and-execution)
+- [Application Settings](#application-settings)
+- [Key Features](#key-features)
 
-이 프로젝트는 **Spring Boot**를 기반으로 개발되었으며, **H2 데이터베이스**를 사용하여 데이터를 저장하고, **JPA**를 통해 데이터 관리를 수행합니다. **Thymeleaf**는 서버 사이드 템플릿 엔진으로, HTML 파일과 연동되어 동적인 웹 페이지를 생성합니다.
+## Project Overview
 
-## 기술 스택
+This project is developed based on **Spring Boot** with data stored in **H2 Database** and managed using **JPA**. **Thymeleaf** acts as the server-side template engine, linking with HTML files to create dynamic web pages.
 
-- **Spring Boot**: 스프링 부트(Spring Boot)는 웹 프로그램(웹 애플리케이션)을 쉽고 빠르게 만들 수 있도록 도와주는 자바의 웹 프레임워크
-- **H2 Database**: 임베디드 관계형 데이터베이스
-- **JPA (Java Persistence API)**: 자바 애플리케이션과 관계형 데이터베이스 사이 데이터 영속성을 관리하기 위한 표준화된 인터페이스
-- **Thymeleaf**: 스프링 서버에서 데이터를 받아 우리가 보는 웹 페이지, 즉 HTML 상에 그 데이터를 넣어 보여 주는 템플릿 엔진
-- **IntelliJ IDEA**: 프로젝트 개발에 사용된 통합 개발 환경 (IDE)
+## Technology Stack
 
-## 프로젝트 구조
+- **Spring Boot**: A Java web framework that helps build web applications quickly and easily.
+- **H2 Database**: An embedded relational database.
+- **JPA (Java Persistence API)**: A standardized interface for managing data persistence between Java applications and relational databases.
+- **Thymeleaf**: A template engine that generates dynamic HTML pages, displaying server-side data in web pages.
+- **IntelliJ IDEA**: The integrated development environment (IDE) used for this project.
+
+## Project Structure
 
 ```plaintext
 src
 ├── main
 │   ├── java
 │   │   └── com.mysite.sbb
-│   │       ├── controller      # 웹 컨트롤러
-│   │       ├── entity          # JPA 엔티티 클래스
-│   │       ├── repository      # JPA 레포지토리 인터페이스
-│   │       ├── service         # 서비스 클래스
-│   │       └── ProjectApplication.java  # 메인 애플리케이션 클래스
+│   │       ├── controller      # Web controllers
+│   │       ├── entity          # JPA entity classes
+│   │       ├── repository      # JPA repository interfaces
+│   │       ├── service         # Service classes
+│   │       └── ProjectApplication.java  # Main application class
 │   ├── resources
-│   │   ├── templates           # Thymeleaf 템플릿 파일
-│   │   ├── application.properties # 애플리케이션 설정
-│   │   └── data.sql            # 초기 데이터 로드 스크립트
-└── test                        # 테스트 코드
+│   │   ├── templates           # Thymeleaf template files
+│   │   ├── application.properties # Application settings
+│   │   └── data.sql            # Initial data load script
+└── test                        # Test code
 ```
 
-## 설치 및 실행 방법
+## Installation and Execution
 
-### 1. 사전 요구 사항
-- JDK 17 이상
+### 1. Prerequisites
+- JDK 17 or higher
 - Gradle
 - IntelliJ IDEA
 
-### 2. 프로젝트 클론
+### 2. Clone the Project
 
 ```bash
 git clone https://github.com/yourusername/yourproject.git
 cd yourproject
 ```
 
-### 3. IntelliJ IDEA에서 열기
+### 3. Open in IntelliJ IDEA
 
-1. IntelliJ IDEA를 열고 `File -> Open...`을 선택하여 클론한 프로젝트 디렉토리를 엽니다.
-2. IntelliJ IDEA 왼쪽 상단에 `File -> Setting -> Build, Execution, Deployment -> Build Tools -> Gradle`에서 `Gradle JVM`을 `Oracle OpenJDK 17`로 선택합니다.
-3. 그 다음은 `Setting -> Build, Execution, Deployment -> Compiler -> Java Compiler`에서 `Project bytecode version`을 17로 선택합니다.
-4. Apply를 누르면 JDK버전에 맞는 Gradle 버전으로 Gradle import됩니다.
-5. Maven 또는 Gradle을 사용하여 종속성을 자동으로 다운로드하도록 설정합니다.
-   
+1. Open IntelliJ IDEA, select `File -> Open...`, and choose the cloned project directory.
+2. In the top left of IntelliJ IDEA, go to `File -> Settings -> Build, Execution, Deployment -> Build Tools -> Gradle`, and select `Oracle OpenJDK 17` as the `Gradle JVM`.
+3. Then, under `Settings -> Build, Execution, Deployment -> Compiler -> Java Compiler`, set the `Project bytecode version` to 17.
+4. Click Apply, and Gradle will import based on the JDK version.
+5. Set up Maven or Gradle to automatically download dependencies.
 
-### 4. 애플리케이션 실행
+### 4. Run the Application
 
-1. `src/main/java/com/mysite/sbb/SbbApplication.java` 파일을 찾아 실행합니다.
-2. 애플리케이션은 기본적으로 `http://localhost:5000`에서 실행됩니다.
+1. Locate and run the `src/main/java/com/mysite/sbb/SbbApplication.java` file.
+2. By default, the application runs on `http://localhost:5000`.
 
+### 5. Access the H2 Console
 
-### 5. H2 콘솔 접속
-
-- 애플리케이션이 실행된 후, H2 콘솔은 `http://localhost:8080/h2-console`에서 확인할 수 있습니다.
-- 기본 연결 정보:
+- After starting the application, the H2 Console is accessible at `http://localhost:8080/h2-console`.
+- Default connection information:
   - JDBC URL: `jdbc:h2:mem:testdb`
-  - 사용자명: `sa`
-  - 비밀번호: 비어 있음
+  - Username: `sa`
+  - Password: (leave blank)
 
+## Application Settings
 
-## 애플리케이션 설정
+- The configuration file is located at `src/main/resources/application.properties`.
+  - **spring.application.name**: Sets the application name.
+  - **server.port**: Specifies the web access port number.
+  - **spring.h2.console.enabled**: Enables the H2 database console.
+  - **spring.h2.console.path**: Sets the H2 database access URL.
+  - **spring.datasource.url**: H2 database URL.
+  - **spring.datasource.driverClassName**: Specifies the database driver.
+  - **spring.datasource.username**: Database access username.
+  - **spring.datasource.password**: Database access password.
+  - **spring.h2.console.settings.web-allow-others**: (Optional) Allows external access to the H2 Console.
 
-- 설정 파일은 `src/main/resources/application.properties`입니다.
-  - **spring.application.name**: 애플리케이션 이름 지정
-  - **sever.port**: 웹 접속 포트 번호를 지정
-  - **spring.h2.console.enabled**: H2 데이터베이스 콘솔 활성화여부 설정
-  - **spring.h2.console.path**: H2 데이터베이스 접속 URL
-  - **spring.datasource.url**: H2 데이터베이스 경로
-  - **spring.datasource.driverClassName**: 데이터베이스 드라이버 지정
-  - **spring.datasource.username**: 데이터베이스 접속 아이디
-  - **spring.datasource.password**: 데이터베이스 접속 비밀번호
-  - **spring.h2.console.settings.web-allow-others**: 필수는 아니지만 외부에서 H2콘솔 접속 허용 여부
+## Key Features
 
-
-## 주요 기능
-
-- **사용자 관리**: 사용자 생성, 조회, 수정, 삭제
-- **게시글 관리**: 게시글 작성, 조회, 수정, 삭제
-- **게시글 부가기능**: Markdown, 투표, 답글 작성
-- **H2 데이터베이스 관리**: H2 콘솔을 통한 데이터베이스 관리
+- **User Management**: Create, read, update, and delete users.
+- **Post Management**: Create, read, update, and delete posts.
+- **Additional Post Features**: Markdown support, polls, and replies.
+- **H2 Database Management**: Manage the database through the H2 Console.
